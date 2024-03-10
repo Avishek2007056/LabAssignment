@@ -13,16 +13,16 @@ public class CityList {
         }
         cities.add(city);
     }
-    public List<City> getCities(int flag) {
+    public List<City> getCities(int f) {
         List<City> cityList = cities;
-        if(flag==1){
+        if(f==1){
             Collections.sort(cityList);
         }
         else {
             Collections.sort(cityList, new Comparator<City>() {
                 @Override
-                public int compare(City city, City t1) {
-                    return city.getProvinceName().compareTo(t1.getProvinceName());
+                public int compare(City city, City c) {
+                    return city.getProvinceName().compareTo(c.getProvinceName());
                 }
             });
         }

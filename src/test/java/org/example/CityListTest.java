@@ -5,19 +5,19 @@ import org.junit.jupiter.api.Test;
 import static org.junit.jupiter.api.Assertions.*;
 
 class CityListTest {
-    private CityList mockCityList() {
+    private CityList dummyCityList() {
         CityList cityList = new CityList();
-        cityList.add(mockCity());
+        cityList.add(dummyCity());
         return cityList;
     }
-    private City mockCity() {
-        return new City("Edmonton", "AB");
+    private City dummyCity() {
+        return new City("London", "Manchester");
     }
     @Test
     public void testdelete(){
         CityList cityList = new CityList();
-        City city = new City("Faridpur","Rajshahi");
-        City city2 = new City("Dhaka","Khulna");
+        City city = new City("Rajbari","Rangpur");
+        City city2 = new City("Sylhet","Barisal");
         cityList.add(city);
         cityList.add(city2);
 
@@ -28,8 +28,8 @@ class CityListTest {
     @Test
     public void testdeleteexception(){
         CityList cityList = new CityList();
-        City city = new City("Chittagong","Tungipara");
-        City city2 = new City("Sylhet","Dhaka");
+        City city = new City("Chuadanga","Gopalgonj");
+        City city2 = new City("Feni","Bagerhat");
         cityList.add(city);
         cityList.add(city2);
 
@@ -44,8 +44,8 @@ class CityListTest {
     @Test
     public void testCount(){
         CityList cityList = new CityList();
-        City city = new City("dummy1","hudai1");
-        City city2 = new City("dummy2","hudai2");
+        City city = new City("zilla1","state1");
+        City city2 = new City("zilla2","state2");
         cityList.add(city);
         cityList.add(city2);
 
@@ -55,11 +55,11 @@ class CityListTest {
     @Test
     public void testSortCities() {
         CityList cityList = new CityList();
-        City city = new City("dumdum" , "Dubai");
+        City city = new City("Derbin" , "Abu Dhabi");
         cityList.add(city);
         assertEquals(0, city.compareTo(cityList.getCities(1).get(0)));
 
-        City city1 = new City("Abratown", "LaLaLand");
+        City city1 = new City("DisneyLand", "WonderLand");
         cityList.add(city1);
 
         assertEquals(0, city1.compareTo(cityList.getCities(1).get(0)));
